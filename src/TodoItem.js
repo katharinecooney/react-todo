@@ -56,7 +56,7 @@ class TodoItem extends Component {
     if(this.state.isEditting) {
       result = (
         <div className="TodoItem">
-          <form onSubmit={this.handleUpdate}>
+          <form className="Todo-edit-form" onSubmit={this.handleUpdate}>
             <input 
               type="text"
               value={this.state.task}
