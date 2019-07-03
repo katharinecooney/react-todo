@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TodoItem from './TodoItem';
 import NewTodoForm from './NewTodoForm';
 import uuid from 'uuid';
+import './TodoList.css';
 
 class TodoList extends Component {
   constructor(props){
@@ -50,9 +51,14 @@ class TodoList extends Component {
       completed={todo.completed}
     />)
     return(
-      <div>
-        <h1>TODO LIST</h1>
-        {todos}
+      <div className="TodoList">
+        <h1>
+          Todo List 
+          <span>A Simple React Todo List App</span>
+        </h1>
+        <ul>
+          {todos}
+        </ul>
         <NewTodoForm addTodo={this.addTodo}/>
       </div>
     )

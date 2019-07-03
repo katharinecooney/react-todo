@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './TodoItem.css';
-import { thisTypeAnnotation } from '@babel/types';
 
 class TodoItem extends Component {
   constructor(props){
