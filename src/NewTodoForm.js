@@ -29,7 +29,7 @@ class NewTodoForm extends Component {
       <div>
         <h3>New Todo</h3>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="newTodo">Todo</label>
+          <label htmlFor="newTodo">New Todo</label>
           <input 
             type="text" 
             name="newTodo" 

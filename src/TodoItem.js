@@ -3,7 +3,11 @@ import React, { Component } from 'react'
 class TodoItem extends Component {
   constructor(props){
     super(props);
+    this.state = {
+      isEditting: false
+    }
     this.handleRemoveTodo = this.handleRemoveTodo.bind(this);
+    this.toggleForm = this.toggleForm.bind(this);
   }
 
   handleRemoveTodo(){
@@ -11,12 +15,34 @@ class TodoItem extends Component {
     this.props.removeTodo(this.props.id);
   }
 
+  toggleForm(){
+    this.setState({
+      isEditting: !this.state.isEditting
+    })
+  }
+
   render(){
-    return(
+    let result;
+    if(this.state.isEditting) {
+      result = (
+        <div>
+          <form>
+            <input type="text"/>
+          </form>
+        </div>
+      )
+    } else {
+      result = (
       <div>
         <p>{this.props.todo}</p>
-        <span>Edit</span>
-        <span onClick={this.handleRemoveTodo}>Delete</span>
+        <button onClick={this.toggleForm}>Edit</button>
+        <button onClick={this.handleRemoveTodo}>Delete</button>
+      </div>
+      );
+    }
+    return(
+      <div>
+        {result}
       </div>
     )
   }
