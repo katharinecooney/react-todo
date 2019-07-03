@@ -55,7 +55,7 @@ class TodoItem extends Component {
 
     if(this.state.isEditting) {
       result = (
-        <div>
+        <div className="TodoItem">
           <form onSubmit={this.handleUpdate}>
             <input 
               type="text"
@@ -69,8 +69,8 @@ class TodoItem extends Component {
       )
     } else {
       result = (
-      <div>
-        <p className={this.state.completed ? 'completed' : ''} onClick={this.toggleCompleted}>{this.props.todo}</p>
+      <div className="TodoItem">
+        <li className={this.state.completed ? 'Todo-task completed' : 'Todo-task'} onClick={this.toggleCompleted}>{this.props.todo}</li>
         <button onClick={this.toggleForm}>Edit</button>
         <button onClick={this.handleRemoveTodo}>Delete</button>
       </div>
