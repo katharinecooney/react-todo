@@ -71,8 +71,14 @@ class TodoItem extends Component {
       result = (
       <div className="TodoItem">
         <li className={this.state.completed ? 'Todo-task completed' : 'Todo-task'} onClick={this.toggleCompleted}>{this.props.todo}</li>
-        <button onClick={this.toggleForm}>Edit</button>
-        <button onClick={this.handleRemoveTodo}>Delete</button>
+        <div className="Todo-buttons">
+          <button onClick={this.toggleForm}>
+            <i className="fas fa-pen"></i>
+          </button>
+          <button onClick={this.handleRemoveTodo}>
+            <i className="fas fa-trash"></i>
+          </button>
+        </div>
       </div>
       );
     }
