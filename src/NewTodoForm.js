@@ -7,6 +7,7 @@ class NewTodoForm extends Component {
       newTodo: ''
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event){
@@ -15,12 +16,20 @@ class NewTodoForm extends Component {
     })
   }
 
+  handleSubmit(event){
+    event.preventDefault();
+    this.props.addTodo(this.state);
+    this.setState({
+      newTodo: ''
+    })
+  }
+
   render(){
     return(
       <div>
         <h3>New Todo</h3>
-        <form>
-          <label htmlFor="newTodo"></label>
+        <form onSubmit={this.handleSubmit}>
+          <label htmlFor="newTodo">Todo</label>
           <input 
             type="text" 
             name="newTodo" 
@@ -28,6 +37,7 @@ class NewTodoForm extends Component {
             value={this.state.newTodo} 
             onChange={this.handleChange}
           />
+          <button type="submit">Add</button>
         </form>
       </div>
     )
