@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './TodoItem.css';
 
 class TodoItem extends Component {
   constructor(props){
@@ -61,7 +62,7 @@ class TodoItem extends Component {
     } else {
       result = (
       <div>
-        <p>{this.props.todo}</p>
+        <p className={this.props.completed ? 'completed' : ''}>{this.props.todo}</p>
         <button onClick={this.toggleForm}>Edit</button>
         <button onClick={this.handleRemoveTodo}>Delete</button>
       </div>
